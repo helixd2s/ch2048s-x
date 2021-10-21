@@ -1,3 +1,6 @@
+import c from "utils/constants";
+
+// 
 class Board {
   constructor(pieces, width, height) {
     this.units = {};

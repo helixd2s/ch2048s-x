@@ -1,5 +1,6 @@
+import c from "../utils/constants";
 
-
+//
 class Generator extends Actor  {
   constructor(board) {
     super(board);
@@ -14,9 +15,9 @@ class Generator extends Actor  {
     let free = this.board.getFreeFields();
     if (free.length > 0) {
       let index = Math.random()*free.length;
-      this.turn.resolve([ACTION_GENERATE, free[index]]);
+      this.turn.resolve([c.ACTION_GENERATE, free[index]]);
     }
-    this.turn.resolve([ACTION_SKIP]);
+    this.turn.resolve([c.ACTION_SKIP]);
   }
 };
 

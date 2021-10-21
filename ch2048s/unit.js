@@ -1,12 +1,13 @@
+import c from "utils/constants";
 
-
+// 
 class Unit {
-  constructor(board, location, mask) {
+  constructor(board, location, piece) {
     this.board = board;
     this.location = location;
-    this.mask = mask;
+    this.piece = piece;
     this.value = 2;
-    this.fraction = FRACTION_WHITE;
+    this.fraction = c.FRACTION_WHITE;
     this.available = [];
   }
 

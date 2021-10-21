@@ -1,3 +1,6 @@
+import c from "../utils/constants";
+
+//
 class Actor {
   constructor(board) {
     this.board = board;
@@ -25,7 +28,7 @@ class Actor {
   }
 
   doTurn(location, to) {
-    this.turn.resolve([ACTION_SKIP]);
+    this.turn.resolve([c.ACTION_SKIP]);
   }
 }
 

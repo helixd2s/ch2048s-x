@@ -1,6 +1,6 @@
+import c from "../utils/constants";
 
-
-// 
+//
 class Player extends Actor {
   constructor(board) {
     super(board);
@@ -11,7 +11,7 @@ class Player extends Actor {
     if (unit) {
       let index = unit.available.findIndex((location)=>{ return location[0] == to[0] && location[1] == to[1]; });
       if (index >= 0) {
-        this.turn.resolve([ACTION_TURN, unit, to]);
+        this.turn.resolve([c.ACTION_TURN, unit, to]);
       } 
     }
   }

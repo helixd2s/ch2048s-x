@@ -1,3 +1,6 @@
+import c from "utils/constants";
+
+// 
 class Game {
   constructor(board, actors) {
     this.board = board;
@@ -17,7 +20,7 @@ class Game {
           actor.signalForTurn(actors);
           let turn = yield (await actor.awaitTurn());
           switch (turn[0]) {
-            case ACTION_TURN:
+            case c.ACTION_TURN:
               turn[1].location = turn[2];
               let unit = board.getUnit(turn[2]);
               if (unit) {
@@ -28,12 +31,12 @@ class Game {
                 actor.didFreeTurn = true;
               }
               break;
-            case ACTION_GENERATE: 
+            case c.ACTION_GENERATE: 
               if (actor.didFreeTurn) {
-                board.push(new Unit(board, turn[1], PIECE_QUEEN));
+                board.push(new Unit(board, turn[1], c.PIECE_QUEEN));
               };
               break;
-            case ACTION_SKIP:
+            case c.ACTION_SKIP:
               break;
           }
         }
